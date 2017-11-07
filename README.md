@@ -1,5 +1,4 @@
-> project flow
-
+### Notes:
 * appending to url <?lang=en> will change language of response.
 ### Project flow: 
 1. json/home.json
