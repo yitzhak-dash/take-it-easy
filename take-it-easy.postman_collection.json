@@ -1,0 +1,203 @@
+{
+	"info": {
+		"name": "take-it-easy",
+		"_postman_id": "f3b4fd4a-0061-d47e-65ef-68e188b85beb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search by term",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/javascript, */*; q=0.01"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://easy.co.il/json/list.json?searchedKeyword=bank&c=622&listpage=1&lat=31.771378&lng=35.22038&rad=300&mapid=0",
+					"protocol": "https",
+					"host": [
+						"easy",
+						"co",
+						"il"
+					],
+					"path": [
+						"json",
+						"list.json"
+					],
+					"query": [
+						{
+							"key": "searchedKeyword",
+							"value": "bank",
+							"equals": true
+						},
+						{
+							"key": "c",
+							"value": "622",
+							"equals": true
+						},
+						{
+							"key": "listpage",
+							"value": "1",
+							"equals": true
+						},
+						{
+							"key": "lat",
+							"value": "31.771378",
+							"equals": true
+						},
+						{
+							"key": "lng",
+							"value": "35.22038",
+							"equals": true
+						},
+						{
+							"key": "rad",
+							"value": "300",
+							"equals": true
+						},
+						{
+							"key": "mapid",
+							"value": "0",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get place by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://easy.co.il/json/bizpage.json?p=2015922",
+					"protocol": "https",
+					"host": [
+						"easy",
+						"co",
+						"il"
+					],
+					"path": [
+						"json",
+						"bizpage.json"
+					],
+					"query": [
+						{
+							"key": "p",
+							"value": "2015922",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "search by term - customized",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://easy.co.il/json/list.json?searchedKeyword=עיפרון&listpage=1&lat=31.771378&lng=35.22038&rad=300&mapid=0&mysearch=עיפרון&getSubcatsFromList=true",
+					"protocol": "https",
+					"host": [
+						"easy",
+						"co",
+						"il"
+					],
+					"path": [
+						"json",
+						"list.json"
+					],
+					"query": [
+						{
+							"key": "searchedKeyword",
+							"value": "עיפרון",
+							"equals": true
+						},
+						{
+							"key": "listpage",
+							"value": "1",
+							"equals": true
+						},
+						{
+							"key": "lat",
+							"value": "31.771378",
+							"equals": true
+						},
+						{
+							"key": "lng",
+							"value": "35.22038",
+							"equals": true
+						},
+						{
+							"key": "rad",
+							"value": "300",
+							"equals": true
+						},
+						{
+							"key": "mapid",
+							"value": "0",
+							"equals": true
+						},
+						{
+							"key": "mysearch",
+							"value": "עיפרון",
+							"equals": true
+						},
+						{
+							"key": "getSubcatsFromList",
+							"value": "true",
+							"equals": true
+						},
+						{
+							"key": "c",
+							"value": "622",
+							"equals": true,
+							"disabled": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://easy.co.il/json/home.json",
+					"protocol": "https",
+					"host": [
+						"easy",
+						"co",
+						"il"
+					],
+					"path": [
+						"json",
+						"home.json"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

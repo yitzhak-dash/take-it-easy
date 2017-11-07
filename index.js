@@ -1,7 +1,10 @@
 "use strict";
 // imports
 const client = require('./rest-client');
+const config = require('config');
 
+
+const baseUrl = config.get('baseUrl');
 
 function getPlaceData(pageId) {
     const args = {
@@ -9,7 +12,7 @@ function getPlaceData(pageId) {
             p: pageId
         }
     };
-    return client.getPromise("https://easy.co.il/json/bizpage.json", args)
+    return client.getPromise(`${baseUrl}json/bizpage.json`, args)
         .then((res) => {
             return res.data;
         }).catch(err => {
@@ -38,7 +41,7 @@ function searchPlaces(searchedKeyword, lat, lng, listpage = 1, rad = 300, c = 62
             listpage
         }
     };
-    return client.getPromise("https://easy.co.il/json/list.json", args)
+    return client.getPromise(`${baseUrl}json/list.json`, args)
         .then(res => {
             return res.data;
         }).catch(err => {
@@ -48,7 +51,20 @@ function searchPlaces(searchedKeyword, lat, lng, listpage = 1, rad = 300, c = 62
 }
 
 
-function getHome() {
+function home() {
+    return client.getPromise(`${baseUrl}/json/home.json`)
+        .then(res => {
+            return res.data;
+        });
+}
+
+function getShoppingCategories() {
+    return home()
+        .then(data => segments[1].items);
+}
+
+
+function main() {
 
 }
 
