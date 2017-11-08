@@ -2,6 +2,7 @@
 // imports
 const client = require('./rest-client');
 const config = require('config');
+const request = require("request");
 
 
 const baseUrl = config.get('baseUrl');
@@ -58,18 +59,37 @@ function home() {
         });
 }
 
-function getShoppingCategories() {
-    return home()
-        .then(data => segments[1].items);
+function getShoppingCategories(data) {
+    return Promise.resolve(data.segments[1].items.map(item => item.link));
+}
+
+function getCatIdFromHtmlPage(link) {
+
+    request.get(`${baseUrl}/${link}`, (req, res) => {
+        console.log(req);
+    });
+
+    return client.getPromise(`${baseUrl}/${link}`)
+        .then(html => {
+            console.log(html.data);
+            const regex = /var catid=(["'])(?:(?=(\\?))\2.)*?\1/g;
+            const res = regex.exec(html);
+            return res[0];
+        })
 }
 
 
 function main() {
-
+    home()
+        .then(data => getShoppingCategories(data))
+        .then(links => getCatIdFromHtmlPage(links[0]))
+        .then(catId => console.log(catId));
 }
 
+main();
+
 // getPlaceData(2015922);
-searchPlaces('bank', 31.771378, 35.22038, 2)
-    .then(data => console.log(JSON.stringify(data, undefined, 2)));
+// searchPlaces('bank', 31.771378, 35.22038, 2)
+//     .then(data => console.log(JSON.stringify(data, undefined, 2)));
 
 
