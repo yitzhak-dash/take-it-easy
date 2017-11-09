@@ -1,8 +1,9 @@
 "use strict";
 // imports
 const client = require('./rest-client');
+const Promise = require("bluebird");
 const config = require('config');
-const request = require("request");
+const request = Promise.promisify(require("request"));
 
 
 const baseUrl = config.get('baseUrl');
@@ -51,42 +52,75 @@ function searchPlaces(searchedKeyword, lat, lng, listpage = 1, rad = 300, c = 62
         })
 }
 
-
 function home() {
+    console.log('going to home.json....');
     return client.getPromise(`${baseUrl}/json/home.json`)
         .then(res => {
             return res.data;
         });
 }
 
-function getShoppingCategories(data) {
+function getCategories(data) {
+    console.log('retrieve categories');
     return Promise.resolve(data.segments[1].items.map(item => item.link));
 }
 
 function getCatIdFromHtmlPage(link) {
-
-    request.get(`${baseUrl}/${link}`, (req, res) => {
-        console.log(req);
-    });
-
-    return client.getPromise(`${baseUrl}/${link}`)
-        .then(html => {
-            console.log(html.data);
+    const url = `${baseUrl}/${link}`;
+    console.log('going to ' + url);
+    // disable certificate validation
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+    return request(url)
+        .then((response) => {
             const regex = /var catid=(["'])(?:(?=(\\?))\2.)*?\1/g;
-            const res = regex.exec(html);
-            return res[0];
-        })
+            const res = regex.exec(response.body);
+            const str = res[0];
+            return str.match(/\"(.*)\"/).pop();
+        }).catch(err => {
+            console.log(`error on downloading ${url} ${err.message}`);
+            return Promise.reject();
+        });
 }
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+}
+
+function getCatIds(links) {
+    const arr = [];
+    const actions = links.map(link => Promise.delay(getRandomInt(100, 1139))
+        .then(() => getCatIdFromHtmlPage(link)));
+    return Promise.each(actions, (catId) => arr.push(catId))
+        .then(() => arr);
+}
+
+function getSubcats(catId) {
+    const url = `${baseUrl}/subcats.json`;
+    console.log(`go to ${url}`);
+    return client.getPromise(url, {parameters: {c: catId}})
+        .then(res => {
+            console.log(res.data);
+            const subcats = res.data.subcats;
+            return subcats.find(item => item.kind === 'cats').cats;
+        });
+}
 
 function main() {
     home()
-        .then(data => getShoppingCategories(data))
-        .then(links => getCatIdFromHtmlPage(links[0]))
-        .then(catId => console.log(catId));
+        .then(data => getCategories(data))
+        .then(links => getCatIds(links))
+        .then(catIds => console.log(catIds))
+        .catch(err => console.log(err.message));
 }
 
-main();
+// main();
+
+
+getSubcats(4850)
+    .then((data) => console.log(JSON.stringify(data)));
+
 
 // getPlaceData(2015922);
 // searchPlaces('bank', 31.771378, 35.22038, 2)
