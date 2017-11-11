@@ -4,6 +4,7 @@ const client = require('./rest-client');
 const Promise = require("bluebird");
 const config = require('config');
 const request = Promise.promisify(require("request"));
+const writeJsonFile = Promise.promisify(require('jsonfile').writeFile);
 
 
 const baseUrl = config.get('baseUrl');
@@ -23,23 +24,17 @@ function getPlaceData(pageId) {
 }
 
 /**
- * @param searchedKeyword
  * @param lat
  * @param lng
- * @param rad: radius for search(meters)
- * @param c: categoryId
- * @param order
+ * @param categoryId
  * @param listpage: page number
  */
-function searchPlaces(searchedKeyword, lat, lng, listpage = 1, rad = 300, c = 622, order = 50) {
+function searchPlaces(lat, lng, categoryId, listpage = 1) {
     const args = {
         parameters: {
-            searchedKeyword,
             lat,
             lng,
-            rad,
-            // c,
-            mysearch: searchedKeyword,
+            c: categoryId,
             listpage
         }
     };
@@ -88,38 +83,44 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-function getCatIds(links) {
-    const arr = [];
-    const actions = links.map(link => Promise.delay(getRandomInt(100, 1139))
+function getCategoryIds(links) {
+    const categoryIds = [];
+    const actions = links.map(link => Promise.delay(getRandomInt(1197, 2139))
         .then(() => getCatIdFromHtmlPage(link)));
-    return Promise.each(actions, (catId) => arr.push(catId))
-        .then(() => arr);
+    return Promise.each(actions, (catId) => categoryIds.push(catId))
+        .then(() => categoryIds);
 }
 
-function getSubcats(catId) {
-    const url = `${baseUrl}/subcats.json`;
+function getSubcategoryLinks(catId) {
+    const url = `${baseUrl}/json/subcats.json?c=${catId}`;
     console.log(`go to ${url}`);
-    return client.getPromise(url, {parameters: {c: catId}})
+    return client.getPromise(url)
         .then(res => {
-            console.log(res.data);
-            const subcats = res.data.subcats;
-            return subcats.find(item => item.kind === 'cats').cats;
+            const subcats = res.data.bizlist.subcats;
+            const filteredCategories = subcats.find(item => item.kind === 'cats');
+            return filteredCategories ? filteredCategories.cats.map(item => item.link) : [];
         });
 }
 
-function main() {
+function getAllSubcategoriesLinks(catIds) {
+    const links = [];
+    const actions = catIds.map(catId => Promise.delay(getRandomInt(1223, 3564))
+        .then(() => getSubcategoryLinks(catId)));
+    return Promise.each(actions, (catLinks) => links.push(...catLinks))
+        .then(() => links);
+}
+
+function mainRetrieveAllCategories() {
     home()
         .then(data => getCategories(data))
-        .then(links => getCatIds(links))
-        .then(catIds => console.log(catIds))
+        .then(links => getCategoryIds(links))
+        .then(catIds => getAllSubcategoriesLinks(catIds))
+        .then(links => getCategoryIds(links))
+        .then(catIds => writeJsonFile('./data/categories.json', catIds))
         .catch(err => console.log(err.message));
 }
 
-// main();
-
-
-getSubcats(4850)
-    .then((data) => console.log(JSON.stringify(data)));
+mainRetrieveAllCategories();
 
 
 // getPlaceData(2015922);

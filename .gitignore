@@ -60,3 +60,6 @@ typings/
 .env
 
 .idea
+
+data/
+
