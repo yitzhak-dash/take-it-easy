@@ -1,0 +1,309 @@
+{
+  "bizpage": {
+    "bizid": "3579142",
+    "bizname": "Maafe Neeman",
+    "metadesc": "הכל אודות מאפה נאמן ביפו 34, ירושלים - טלפונים, שעות פתיחה, ניווט, ביקורות ועוד רשתות מאפיות וקונדיטוריות תוכלו למצוא באתר איזי.",
+    "phone": "02-6236797",
+    "logo": "https://commondatastorage.googleapis.com/easy/images/StaticLogo/9204589_1.jpg",
+    "mapicon": "https://commondatastorage.googleapis.com/easy/images/category/retnaBluePointed/b.png",
+    "position": {
+      "isprecise": true,
+      "lat": 31.781212,
+      "lng": 35.220913,
+      "pointradius": 12,
+      "mapid": 497746,
+      "address": "Jaffa Street 34 Jerusalem"
+    },
+    "media": {
+      "images": [
+        {
+          "title": "web",
+          "type": "webview",
+          "images": [
+            {
+              "thumbnail": "https://commondatastorage.googleapis.com/easy/images/PICS/3679837.jpg",
+              "link": "https://maps.google.com/?cid=2645910393737175968",
+              "legal": "maps.google.com"
+            },
+            {
+              "thumbnail": "https://commondatastorage.googleapis.com/easy/images/PICS/3683590.jpg",
+              "link": "https://maps.google.com/?cid=2645910393737175968",
+              "legal": "maps.google.com"
+            },
+            {
+              "thumbnail": "https://commondatastorage.googleapis.com/easy/images/PICS/3885746.jpg",
+              "link": "https://maps.google.com/?cid=2645910393737175968",
+              "legal": "maps.google.com"
+            },
+            {
+              "thumbnail": "https://commondatastorage.googleapis.com/easy/images/PICS/3914908.jpg",
+              "link": "https://maps.google.com/?cid=2645910393737175968",
+              "legal": "maps.google.com"
+            },
+            {
+              "thumbnail": "https://commondatastorage.googleapis.com/easy/images/PICS/3740740.jpg",
+              "link": "https://maps.google.com/?cid=2645910393737175968",
+              "legal": "maps.google.com"
+            }
+          ]
+        }
+      ],
+      "facebookid": "233213486741276"
+    },
+    "reviews": {
+      "easyrating": 8.4,
+      "numofreviews": "48 reviews",
+      "items": [
+        {
+          "name": "Sam F.",
+          "score": 1,
+          "type": "easy",
+          "pic": "https://lh3.googleusercontent.com/-M7ZbjODNCBU/AAAAAAAAAAI/AAAAAAAAAAA/AKTaeK9aLtpI3oEmgaS9mTj9T4n2Pi7TsQ/s96-c/photo.jpg",
+          "date": "24/04/2017",
+          "text": "פסטה ברוטב שמנת ופטריות... שפכו שמנת מתוקה על הפסטה, שום טעם שום תיבול, הרגשה של קצפת לא מוקצפת",
+          "peek": true
+        },
+        {
+          "name": "10bis",
+          "score": 8,
+          "type": "site",
+          "link": "http://www.10bis.co.il/g10/site.aspx?state=reviews&area=restaurant&shop=20974",
+          "pic": "https://storage.googleapis.com/easy/images/UserProfilePics/10bis.png",
+          "date": "3 Days ago",
+          "text": "33 Reviews"
+        },
+        {
+          "name": "tripadvisor",
+          "score": 10,
+          "type": "site",
+          "link": "https://www.tripadvisor.co.il/Restaurant_Review-g293983-d6819270-Reviews-Sambuki-Jerusalem_Jerusalem_District.html#REVIEWS",
+          "pic": "https://storage.googleapis.com/easy/images/UserProfilePics/tripadvisor.png",
+          "date": "3 Days ago",
+          "text": "5 Reviews",
+          "peek": true
+        },
+        {
+          "name": "דפי זהב",
+          "score": 6,
+          "type": "site",
+          "link": "https://www.d.co.il/80025958/43740/",
+          "pic": "https://storage.googleapis.com/easy/images/UserProfilePics/dapaz.png",
+          "date": "06/10/2016",
+          "text": "3 Reviews"
+        },
+        {
+          "name": "2eat",
+          "score": 8,
+          "type": "site",
+          "link": "http://www.2eat.co.il/restaurant_criticism.aspx?restid=20660",
+          "pic": "https://storage.googleapis.com/easy/images/UserProfilePics/2eat.png",
+          "date": "17/06/2014",
+          "text": "6 Reviews"
+        }
+      ]
+    },
+    "sharelink": "https://easy.co.il/en/page/3579142",
+    "bestsubcat": "Bakeries and Patisseries Chains",
+    "upperbuttons": [
+      {
+        "title": "Homepage",
+        "type": "external",
+        "yetzia": "homepage",
+        "link": "http://neemans.co.il",
+        "icon": "https://easy.co.il/images/iWebsite.png"
+      },
+      {
+        "title": "Facebook",
+        "type": "external",
+        "yetzia": "facebook",
+        "link": "https://www.facebook.com/233213486741276",
+        "icon": "https://easy.co.il/images/iFacebook.png"
+      }
+    ],
+    "lastupdated": " 6 days ago On the Internet",
+    "editenabled": true,
+    "openhours": {
+      "title": "Operating hours",
+      "items": [
+        {
+          "day": "Sun",
+          "hours": [
+            "07:00-22:00"
+          ]
+        },
+        {
+          "day": "Mon",
+          "hours": [
+            "07:00-22:00"
+          ]
+        },
+        {
+          "day": "Tue",
+          "hours": [
+            "07:00-22:00"
+          ]
+        },
+        {
+          "day": "Wed",
+          "hours": [
+            "07:00-22:00"
+          ]
+        },
+        {
+          "day": "Thu",
+          "hours": [
+            "07:00-22:00"
+          ]
+        },
+        {
+          "day": "Fri",
+          "hours": [
+            "07:00-15:00"
+          ]
+        },
+        {
+          "day": "Sat",
+          "hours": [
+            "18:15-24:00"
+          ]
+        }
+      ]
+    },
+    "features": [
+      {
+        "title": "Maafe Neeman",
+        "type": "bizlist",
+        "link": "/en/list/Maafe-Neeman"
+      },
+      {
+        "title": "Bakeries and Patisseries Chains",
+        "type": "bizlist",
+        "link": "/en/list/Bakeries-and-Patisseries-Chains"
+      },
+      {
+        "title": "Cafe",
+        "type": "bizlist",
+        "link": "/en/list/Cafes"
+      },
+      {
+        "title": "Restaurant",
+        "type": "bizlist",
+        "link": "/en/list/Restaurants-and-Fast-Food"
+      },
+      {
+        "title": "Bakeries and Patisseries",
+        "type": "bizlist",
+        "link": "/en/list/Bakeries-and-Patisseries"
+      },
+      {
+        "title": "10bis",
+        "type": "bizlist",
+        "link": "/en/list/Maafe-Neeman?c2=3232"
+      },
+      {
+        "title": "Dairy Kosher",
+        "type": "bizlist",
+        "link": "/en/list/Maafe-Neeman?c2=19965"
+      },
+      {
+        "title": "Romantic",
+        "type": "bizlist",
+        "link": "/en/list/Restaurants-and-Fast-Food?c2=21356"
+      },
+      {
+        "title": "Suitable For Children",
+        "type": "bizlist",
+        "link": "/en/list/Restaurants-and-Fast-Food?c2=1833"
+      },
+      {
+        "title": "Kosher",
+        "type": "bizlist",
+        "link": "/en/list/Maafe-Neeman?c2=3721"
+      },
+      {
+        "title": "Access For Disabled",
+        "type": "bizlist",
+        "link": "/en/list/Maafe-Neeman?c2=2024"
+      },
+      {
+        "title": "Kosher L'mehadrin",
+        "type": "bizlist",
+        "link": "/en/list/Maafe-Neeman?c2=3728"
+      },
+      {
+        "title": "Vegeterian Food",
+        "type": "bizlist",
+        "link": "/en/list/Maafe-Neeman?c2=20300"
+      },
+      {
+        "title": "Smoking Area",
+        "type": "bizlist",
+        "link": "/en/list/Restaurants-and-Fast-Food?c2=433"
+      },
+      {
+        "title": "Breakfast",
+        "type": "bizlist",
+        "link": "/en/list/Restaurants-and-Fast-Food?c2=1449"
+      }
+    ],
+    "description": {
+      "text": "רשת \"מאפה נאמן\" התחילה את דרכה בירושלים של פעם בשנת 1944. רבי ברוך נאמן ז\"ל, סב המשפחה, היה מייצר מוצרי מאפה ומוכר אותם על גבי עגלת תינוק בשכונת הבוכרים וברחובות ירושלים. הרבה ירושלמים גדלו על מאפים אלו שבחלוף השנים הפכו לשם דבר בעיר הקודש. ובעסקים משפחתיים כמו בעסקים משפחתיים לאחר מספר שנים הועבר השרביט לאחד הבנים - יוסי נאמן, שהחליט להרים את הכפפה ולהפוך את מאפה נאמן לרשת עצמאית בעלת סניפים בכל רחבי הארץ.   המוטו שלנו הוא להביא לחך הישראלי מוצרי מאפה גורמה שעושים שימוש בחומרי גלם איכותיים ועטופים בטעמים הביתיים של בית אבא."
+    },
+    "family": [],
+    "dynamicrows": [
+      {
+        "title": "neemans.co.il",
+        "icon": "https://easy.co.il/images/iInfoWebsite.png",
+        "type": "external",
+        "link": "http://neemans.co.il",
+        "yetzia": "homepage"
+      },
+      {
+        "title": "Facebook",
+        "icon": "https://easy.co.il/images/iInfoFacebook.png",
+        "type": "external",
+        "link": "https://www.facebook.com/233213486741276",
+        "yetzia": "facebook"
+      },
+      {
+        "title": "02-6236797",
+        "icon": "https://easy.co.il/images/iInfoPhone.png",
+        "type": "phone",
+        "link": "026236797",
+        "yetzia": "call phone"
+      },
+      {
+        "title": "02-6252203",
+        "icon": "https://easy.co.il/images/iInfoPhone.png",
+        "type": "phone",
+        "link": "026252203",
+        "yetzia": "call phone"
+      },
+      {
+        "type": "zipcode",
+        "title": "postcode: 9422202",
+        "link": "9422202",
+        "icon": "https://easy.co.il/images/iInfoZipcode.png"
+      },
+      {
+        "title": "Links to aditional sources",
+        "icon": "https://easy.co.il/images/iInfoBizLinks.png",
+        "type": "bizlinks",
+        "outofgrid": true
+      }
+    ],
+    "seolinks": [
+      {
+        "title": "Bakeries and Patisseries in Jerusalem",
+        "link": "/en/list/Bakeries-and-Patisseries?region=933"
+      },
+      {
+        "title": "Groceries in Jerusalem",
+        "link": "/en/list/Groceries?region=933"
+      }
+    ],
+    "pagegeneratetime": "11/14/2017 10:37:16 PM",
+    "bdclientid": "121843956",
+    "bdid": "121909438"
+  }
+}

@@ -12,6 +12,7 @@ const baseUrl = config.get('baseUrl');
 function getPlaceData(pageId) {
     const args = {
         parameters: {
+            lang: 'en',
             p: pageId
         }
     };
@@ -120,11 +121,10 @@ function mainRetrieveAllCategories() {
         .catch(err => console.log(err.message));
 }
 
-mainRetrieveAllCategories();
+// mainRetrieveAllCategories();
 
 
-// getPlaceData(2015922);
-// searchPlaces('bank', 31.771378, 35.22038, 2)
+getPlaceData(3579142).then(data => console.log(JSON.stringify(data, undefined, 2)));
+// searchPlaces(31.771378, 35.22038, '17440', 1)
 //     .then(data => console.log(JSON.stringify(data, undefined, 2)));
-
 

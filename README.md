@@ -18,3 +18,22 @@
      }
      ```
  9. use response: save staff in storage, check if <nextpage> is true to load next page, by incrementing <listpage>
+ #### Here's the place to ask the question: why don't we use MongoDb  instead Postgres???
+ > data-shape:
+ ```javascript
+ {
+    name: bizpage.bizname,
+    location: {
+        lat: bizpage.position.lat,
+        lng: bizpage.position.lng,
+        address: bizpage.position.address,
+        mapId:bizpage.position.mapid
+    },
+    bestsubcat:bizpage.bestsubcat
+    openHours:[{ 
+           day:bizpage.openhours.items[n].day,
+           hours:bizpage.openhours.items[n].hours // array
+        }],
+    
+ }
+ ```
