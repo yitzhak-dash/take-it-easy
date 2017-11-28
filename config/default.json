@@ -1,3 +1,4 @@
 {
-  "baseUrl": "https://easy.co.il/"
+  "baseUrl": "https://easy.co.il/",
+  "categoryFilePath": "./data/categories.json"
 }

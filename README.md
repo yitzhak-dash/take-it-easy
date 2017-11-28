@@ -18,7 +18,7 @@
      }
      ```
  9. use response: save staff in storage, check if <nextpage> is true to load next page, by incrementing <listpage>
- #### Here's the place to ask the question: why don't we use MongoDb  instead Postgres???
+ #### Here's the place to ask the question: why don't we use MongoDb or Elasticsearch instead Postgres???
  > data-shape:
  ```javascript
  {
