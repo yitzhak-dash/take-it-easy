@@ -12,7 +12,9 @@
   "dependencies": {
     "bluebird": "^3.5.1",
     "config": "^1.28.0",
+    "elasticsearch": "^14.0.0",
     "jsonfile": "^4.0.0",
+    "lodash": "^4.17.4",
     "node-rest-client": "^3.1.0",
     "node-rest-client-promise": "^3.0.0",
     "request": "^2.83.0"

@@ -1,6 +1,7 @@
 "use strict";
 // imports
 const client = require('./rest-client');
+const {getRandomInt} = require('./utils');
 const Promise = require("bluebird");
 const config = require('config');
 const request = Promise.promisify(require("request"));
@@ -38,12 +39,6 @@ function getCatIdFromHtmlPage(link) {
             console.log(`error on downloading ${url} ${err.message}`);
             return Promise.reject();
         });
-}
-
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
 function getCategoryIds(links) {
