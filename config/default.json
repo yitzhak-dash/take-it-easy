@@ -2,6 +2,8 @@
   "baseUrl": "https://easy.co.il/",
   "categoryFilePath": "./data/categories.json",
   "elastic": {
-    "host": "localhost:9200"
+    "host": "localhost:9200",
+    "index": "bowdo-db",
+    "type": "places"
   }
 }

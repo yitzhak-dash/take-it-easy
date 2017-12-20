@@ -21,14 +21,14 @@ function ping() {
 
 function deleteWholeType() {
     client.deleteByQuery({
-        index: 'bowdo',
-        type: 'place'
+        index: 'bowdo-db',
+        type: 'places'
     }).then(data => console.log('finished'));
 }
 
 async function search() {
     const res = await client.search({
-        index: 'bowdo',
+        index: config.get('elastic').index,
         type: 'place',
         body: {
             query: {
@@ -67,12 +67,17 @@ function parse(rawObj) {
 }
 
 
-async function addPlace(place) {
+function addPlace(place) {
     // todo : validate data shape
-    return await client.create({
-        index: 'bowdo',
-        type: 'place',
-        id: (place.id),
-        body: place
+    const parsedPlace = parse(place);
+    return client.create({
+        index: config.get('elastic').index,
+        type: 'places',
+        id: parsedPlace.id,
+        body: parsedPlace
     });
 }
+
+module.exports = {
+    addPlace
+};

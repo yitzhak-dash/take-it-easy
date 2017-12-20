@@ -43,7 +43,7 @@ function getCatIdFromHtmlPage(link) {
 
 function getCategoryIds(links) {
     const categoryIds = [];
-    const actions = links.map(link => Promise.delay(getRandomInt(1197, 2139))
+    const actions = links.map(link => Promise.delay(getRandomInt(0, 1))
         .then(() => getCatIdFromHtmlPage(link)));
     return Promise.each(actions, (catId) => categoryIds.push(catId))
         .then(() => categoryIds);
@@ -62,7 +62,7 @@ function getSubcategoryLinks(catId) {
 
 function getAllSubcategoriesLinks(catIds) {
     const links = [];
-    const actions = catIds.map(catId => Promise.delay(getRandomInt(1223, 3564))
+    const actions = catIds.map(catId => Promise.delay(getRandomInt(0, 1))
         .then(() => getSubcategoryLinks(catId)));
     return Promise.each(actions, (catLinks) => links.push(...catLinks))
         .then(() => links);
